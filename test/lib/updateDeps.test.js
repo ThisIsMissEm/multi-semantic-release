@@ -69,6 +69,7 @@ describe("resolveReleaseType()", () => {
 				_localDeps: [
 					{
 						name: "a",
+						// _lastRelease: { version: "1.0.0" },
 						manifest: { dependencies: { b: "1.0.0", c: "1.0.0", d: "1.0.0" } },
 						_nextType: false,
 						_localDeps: [
@@ -86,14 +87,18 @@ describe("resolveReleaseType()", () => {
 		[
 			"uses `patch` strategy as default (legacy flow)",
 			{
+				manifest: { dependencies: { a: "1.0.0" } },
 				_nextType: undefined,
 				_localDeps: [
 					{
+						name: "a",
 						_nextType: false,
+						//_lastRelease: { version: "1.0.0" },
+						manifest: { dependencies: { b: "1.0.0", c: "1.0.0", d: "1.0.0" } },
 						_localDeps: [
-							{ _nextType: false, _localDeps: [] },
-							{ _nextType: "minor", _localDeps: [] },
-							{ _nextType: "major", _localDeps: [] },
+							{ name: "b", _nextType: false, _localDeps: [], _lastRelease: { version: "1.0.0" }  },
+							{ name: "c", _nextType: "minor", _localDeps: [], _lastRelease: { version: "1.0.0" }  },
+							{ name: "d", _nextType: "major", _localDeps: [], _lastRelease: { version: "1.0.0" }  },
 						],
 					},
 				],

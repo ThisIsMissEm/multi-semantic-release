@@ -194,7 +194,7 @@ describe("multiSemanticRelease()", () => {
 		expect(result[3].result).toBe(false);
 		expect(result).toHaveLength(4);
 	});
-	test.only("Changes in some packages", async () => {
+	test("Changes in some packages", async () => {
 		// Create Git repo.
 		const cwd = gitInit();
 		// Initial commit.

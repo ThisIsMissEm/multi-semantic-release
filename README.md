@@ -37,11 +37,11 @@ There are several tweaks to adapt **msr** to some corner cases:
 
 |Flag|Type|Description|Default|
 |---|---|---|---|
-|`--deps.release`|string| Define release type for dependant package if any of its deps changes. Supported values: patch, minor, major, inherit| `patch`
-|`--deps.bump`|string| Define deps version updating rule. Allowed: override, satisfy, inherit | `override`
 |`--sequential-init`|bool|Avoid hypothetical concurrent initialization collisions|`false`|
 |`--debug`|bool|Output debugging information|`false`|
 |`--first-parent`|bool|Apply commit filtering to current branch only|`false`|
+|`--deps.bump`|string| Define deps version updating rule. Allowed: override, satisfy, inherit. **Experimental feat**  | `override`
+|`--deps.release`|string| Define release type for dependant package if any of its deps changes. Supported values: patch, minor, major, inherit. **Experimental feat** | `patch`
 
 ## API
 
